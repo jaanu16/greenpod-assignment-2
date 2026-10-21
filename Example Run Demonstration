@@ -1,0 +1,30 @@
+3. Example Run Demonstration
+
+The project includes a demonstration script that classifies a fruit image using two computer vision approaches: a classical Support Vector Machine (SVM) and a MobileNetV2 transfer learning model.
+
+Objective: To compare the predictions produced by both trained models for the same input image.
+
+Models used:
+
+Approach 1 — Classical Machine Learning: HSV color histograms and Local Binary Patterns (LBP) are extracted from the input image and passed to a trained SVM classifier.
+Approach 2 — Deep Learning: The input image is resized and normalized before being passed to the trained MobileNetV2 model.
+
+Execution command:
+
+python main.py --mode predict --image data/test/canker/sample.jpg
+
+
+Example output:
+
+PREDICTION RESULTS
+Image: data/test/canker/sample.jpg
+SVM prediction: canker
+MobileNetV2 prediction: canker
+MobileNetV2 softmax score: 54.44%
+
+
+Note: This is an illustrative example based on the reported experiment. Run the script using your saved models and actual test image to obtain the verified output.
+
+Observation: Both models predicted the canker class for the example image. The MobileNetV2 softmax score indicates the relative confidence assigned to its predicted class, but it is not necessarily a calibrated probability.
+
+Conclusion: The demonstration provides a simple way to compare the outputs of the classical and deep learning approaches on the same image. The current implementation classifies orange conditions; the original avocado assignment requires retraining the models using the four avocado ripening stages.
